@@ -6,8 +6,9 @@ if [ "$#" -ne 2 ]; then
 	exit 1
 fi
 
-## give information to the user
-echo "Opening application: [$1] \n\r Reading crash file: [$2]"
+## print information to the user
+echo "Opening application: [$1]"
+echo "Reading crash file: [$2]"
 
 ## read the file in loop
 while read line; do
