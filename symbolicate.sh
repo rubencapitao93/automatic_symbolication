@@ -23,7 +23,10 @@ while read line; do
 		## check for anything that starts with '0x' and assume it is the stack address
 		stackAddress=`echo "$line" | sed 's/^.*\(0x.*\)/\1/g;s/ .*//g'`
 
+		## check for the ' + ' string and assume that what comes after that is the decimal address
 		decimalAddress=`echo "$line" | sed 's/.* + //g;s/ .*//g'`
+
+		## calculate the load address based on the stack and decimal addresses
 		loadAddress=`echo "obase=16;ibase=10;$(($stackAddress-$decimalAddress))" | bc`
 		
 		## translate the memory addresses to function names (if those are found on the symbols)
@@ -31,13 +34,13 @@ while read line; do
 		atos -o "$1" -l $loadAddress $stackAddress -arch arm64
 	else
 
-		## to have a readable crash log, let's divide this by thread
+		## to have a readable symbolicated crash log, I've added some prints to divide this by thread
 		if [[ $line = *"Thread"* ]]; then
 			echo ""
 			echo "$line"
 		fi
 	fi
-	       
+
 done < <(tr -d '\r' < "$2") 
 ## it's possible to use only "$2" in the line above, however, in some files, we get a "syntax error: invalid arithmetic operator"
 ## to fix this, we remove the carriage returns from the file's lines.
