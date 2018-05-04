@@ -4,7 +4,7 @@
   * The _symbolicate.sh_ script;
   * The crash log file with the stack of the error;
   * The _.app.dSYM_ file (is actually a compressed folder...) from the source code of the application installed on the device.
-* Open a terminal in the folder created in step 2, and run the following commands:
+* Open a terminal in the folder created in the previous step, and run the following commands:
   * To be able to execute the script:
   ```
     $ chmod u+x symbolicate.sh
