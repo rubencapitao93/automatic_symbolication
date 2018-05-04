@@ -1,16 +1,16 @@
 ## Usage ##
 
-1. In your MacBook, create a new folder to store all the necessary resources. The resources are:
-  1. The _symbolicate.sh_ script;
-  2. The crash log file with the stack of the error;
-  3. The _.app.dSYM_ file (is actually a compressed folder...) from the source code of the application installed on the device.
-2. Open a terminal in the folder created in step 2, and run the following commands:
-  1. To be able to execute the script:
+* In your MacBook, create a new folder to store all the necessary resources. The resources are:
+  * The _symbolicate.sh_ script;
+  * The crash log file with the stack of the error;
+  * The _.app.dSYM_ file (is actually a compressed folder...) from the source code of the application installed on the device.
+* Open a terminal in the folder created in step 2, and run the following commands:
+  * To be able to execute the script:
   ```
     $ chmod u+x symbolicate.sh
   ```
   
-  2. To perform the symbolication of a crash file with the output to console:
+  * To perform the symbolication of a crash file with the output to console:
   ```
     $ ./symbolicate.sh <appName>.app.dSYM/Contents/Resources/DWARF/<appName> <crash_file>
   ```
