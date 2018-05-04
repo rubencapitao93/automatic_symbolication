@@ -1,10 +1,10 @@
 ## Usage ##
 
-* In your MacBook, create a new folder to store all the necessary resources. The resources are:
+1. In your MacBook, create a new folder to store all the necessary resources. The resources are:
   1. The _symbolicate.sh_ script;
   2. The crash log file with the stack of the error;
   3. The _.app.dSYM_ file (is actually a compressed folder...) from the source code of the application installed on the device.
-* Open a terminal in the folder created in step 2, and run the following commands:
+2. Open a terminal in the folder created in step 2, and run the following commands:
   1. To be able to execute the script:
   ```
     $ chmod u+x symbolicate.sh
