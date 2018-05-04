@@ -21,4 +21,6 @@
     $ ./symbolicate.sh <appName>.app.dSYM/Contents/Resources/DWARF/<appName> <crash_file> > <output_file>
   ```
 
-After that, you'll visualize useful information for troubleshooting instead of random memory addresses (as depicted below).
+After that, you'll visualize useful information for troubleshooting instead of random memory addresses. 
+
+Hope you find it helpful! :)
