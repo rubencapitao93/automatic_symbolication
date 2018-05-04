@@ -12,13 +12,13 @@
   
   * To perform the symbolication of a crash file with the output to console:
   ```
-    $ ./symbolicate.sh *<appName>*.app.dSYM/Contents/Resources/DWARF/*<appName>* *<crash_file>*
+    $ ./symbolicate.sh <appName>.app.dSYM/Contents/Resources/DWARF/<appName> <crash_file>
   ```
   
   where <appName> is the name of the mobile application and <crash_file> is the file containing the error stack.
   Alternatively, you can send the output to a file using the below command:
   ```
-    $ ./symbolicate.sh *<appName>*.app.dSYM/Contents/Resources/DWARF/*<appName>* *<crash_file>* > *<output_file>*
+    $ ./symbolicate.sh <appName>.app.dSYM/Contents/Resources/DWARF/<appName> <crash_file> > <output_file>
   ```
 
 After that, you'll visualize useful information for troubleshooting instead of random memory addresses (as depicted below).
